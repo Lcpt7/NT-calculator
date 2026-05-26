@@ -45,4 +45,4 @@ calculator.py
 
 ## 作者
 
-Lcpt7
+Lcrypto
