@@ -1,4 +1,4 @@
-name: 云端打包 APK (Node.js 24)
+name: 云端打包 APK
 
 on:
   workflow_dispatch:
@@ -7,11 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # ✅ 已升级至 v6, 适配 Node.js 24
       - uses: actions/checkout@v6
 
       - name: 设置 Python
-        # ✅ 已升级至 v6, 适配 Node.js 24
         uses: actions/setup-python@v6
         with:
           python-version: "3.10"
@@ -20,10 +18,9 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 构建 APK
-        run: flet build apk --verbose
+        run: echo y | flet build apk --verbose
 
-      - name: 上传 APK 到下载区
-        # ✅ 已升级至 v5, 适配 Node.js 24
+      - name: 上传 APK
         uses: actions/upload-artifact@v5
         with:
           name: NT-calculator-apk
