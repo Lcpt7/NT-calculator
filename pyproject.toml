@@ -1,5 +1,5 @@
 [project]
-name = "数论计算器"
+name = "nt-calculator"
 version = "1.1.0"
 
 [tool.flet]
