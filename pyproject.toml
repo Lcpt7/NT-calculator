@@ -1,6 +1,6 @@
 [tool.flet]
 # 其他项目元数据（可选）
-name = "NT-calculator"
+name = "数论计算器"
 version = "1.1"
 description = "一个数论计算器"
 
