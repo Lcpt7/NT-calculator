@@ -1,17 +1,15 @@
 name: 云端打包 APK
 
 on:
-  workflow_dispatch:  # 允许手动触发
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
-
+      - uses: actions/checkout@v4          # ✅ 已升级
       - name: 设置 Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5      # ✅ 已升级
         with:
           python-version: "3.10"
 
@@ -23,8 +21,8 @@ jobs:
         run: |
           flet build apk --verbose
 
-      - name: 上传 APK 到下载区
-        uses: actions/upload-artifact@v4
+      - name: 上传 APK
+        uses: actions/upload-artifact@v4   # 这个没问题
         with:
           name: NT-calculator-apk
           path: build/apk/*.apk
