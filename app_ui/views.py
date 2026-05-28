@@ -31,7 +31,7 @@ class NumberTheoryApp:
     def configure_page(self):
         self.page.title = "NTCT"
         self.page.padding = 0
-        self.page.fonts = {"MiSans": "fonts/MiSans-Regular.ttf"}
+        self.page.fonts = {"MiSans": "MiSans-Regular.ttf"}
         self.page.theme = ft.Theme(font_family="MiSans")
         self.page.bgcolor = self.colors["page_bg"]
         self.page.vertical_alignment = ft.MainAxisAlignment.CENTER
