@@ -1,15 +1,14 @@
 [project]
-name = "nt-calculator"
+name = "数论计算器"
 version = "1.1.0"
 
 [tool.flet]
 product = "NT Calculator"
 company = "Lcrypto"
-copyright = "Copyright (C) 2026 by Lcrypto"
 
 [tool.flet.app]
 path = "."
 
 [tool.flet.android]
-split_per_abi = false
 adaptive_icon_background = "#ffffff"
+split_per_abi = false
