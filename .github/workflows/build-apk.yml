@@ -1,7 +1,7 @@
-name: 云端打包APK
+name: 云端打包 APK
 
 on:
-  workflow_dispatch:  # 允许你手动在网页上点按钮触发
+  workflow_dispatch:  # 允许手动触发
 
 jobs:
   build:
@@ -18,11 +18,8 @@ jobs:
       - name: 安装依赖
         run: |
           pip install -r requirements.txt
-          pip install flet
 
       - name: 构建 APK
-        env:
-          FLET_TOKEN: ${{ secrets.FLET_TOKEN }}  # 从仓库秘密变量读取
         run: |
           flet build apk --verbose
 
