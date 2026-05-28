@@ -6,4 +6,4 @@ description = "一个数论计算器"
 
 # 在这里指定图标文件路
 [tool.flet.icons]
-android = "assets\icons\app_icon.png"
+android = "assets/icons/app_icon.png"
