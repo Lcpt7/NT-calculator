@@ -18,7 +18,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: 构建 APK
-        run: echo y | flet build apk --verbose
+        run: echo y | flet build apk --verbose --app-name "数论计算器" --app-version 1.1 --build-number 2 --icon assets/icons/app_icon.png
 
       - name: 上传 APK
         uses: actions/upload-artifact@v5
