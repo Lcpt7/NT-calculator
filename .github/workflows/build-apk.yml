@@ -1,0 +1,33 @@
+name: 云端打包APK
+
+on:
+  workflow_dispatch:  # 允许你手动在网页上点按钮触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: 设置 Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: 安装依赖
+        run: |
+          pip install -r requirements.txt
+          pip install flet
+
+      - name: 构建 APK
+        env:
+          FLET_TOKEN: ${{ secrets.FLET_TOKEN }}  # 从仓库秘密变量读取
+        run: |
+          flet build apk --verbose
+
+      - name: 上传 APK 到下载区
+        uses: actions/upload-artifact@v4
+        with:
+          name: NT-calculator-apk
+          path: build/apk/*.apk
